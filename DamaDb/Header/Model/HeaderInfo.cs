@@ -5,12 +5,14 @@ using System.Text;
 
 namespace DamaDb.Header.Model
 {
+    [Serializable]
     public class HeaderInfo
     {
-        public long MaxId { get; set; }
-        public long DataStartIndex { get; set; }
-        public IEnumerable<long> DeletedRecords { get; set; }
-        public long Count { get; set; }
+        public const int HeaderLengthSize = 4;
+
+        public int ActualHeaderLength { get; set; }
+        public long DataPosition { get; set; } = (1024 * 1024) + 1;
+        public int TabeCount { get; set; }
         public IEnumerable<TableInfo> Tables { get; set; }
     }
 }

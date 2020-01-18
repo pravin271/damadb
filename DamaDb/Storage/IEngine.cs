@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DamaDb.Storage
 {
@@ -9,6 +10,6 @@ namespace DamaDb.Storage
     /// </summary>
     public interface IEngine
     {
-         
+        Task Init();
     }
 }
